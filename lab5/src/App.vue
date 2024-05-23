@@ -58,7 +58,10 @@ export default {
 
         const apiUrl = `${process.env.VUE_APP_API_ORIGIN}/api/v1/user`
 
-        this.user = fetch(apiUrl)
+        this.user = fetch(apiUrl, {
+          credentials: 'include',
+        })
+
           .then(response => {
             if (!response.ok) {
               throw new Error('Network error')
