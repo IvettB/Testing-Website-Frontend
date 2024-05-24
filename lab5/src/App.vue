@@ -58,19 +58,22 @@ export default {
 
         const apiUrl = `${process.env.VUE_APP_API_ORIGIN}/api/v1/user`
 
-        this.user = fetch(apiUrl, {
+        fetch(apiUrl, {
           credentials: 'include',
         })
 
-          .then(response => {
+          .then(async response => {
             if (!response.ok) {
               throw new Error('Network error')
             }
-            return response.json();
+            else {
+              return this.user = await response.json();
+            }
           })
-          .then(user => {
-            return user
-          })
+          // .then(async user => {
+          //   console.log("should output user")
+          //   return user
+          // })
           .catch(error => {
           console.error('Error:', error)
           return this.defaultUser

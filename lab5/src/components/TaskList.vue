@@ -10,8 +10,8 @@
               <!-- TODO: Add a click event handler attribute here that updates an task -->
               <v-btn @click="$emit('updateTask', task)" variant="text">
               <!-- TODO: Add a v-if and v-else check here based on the current task's Done property -->
-                <v-icon v-if="task.Done" icon="mdi-checkbox-marked"  ></v-icon>
-                <v-icon v-else icon="mdi-checkbox-blank-outline"  ></v-icon>
+                <v-icon v-if="!task.Done" icon="mdi-checkbox-blank-outline"  ></v-icon>
+                <v-icon v-else icon="mdi-checkbox-marked"  ></v-icon>
               </v-btn>
             </template>
   

@@ -115,11 +115,10 @@
           {
             method: 'PUT',
             credentials: 'include',
-            taskId: 'include',
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(task)
+            body: JSON.stringify(json)
           }
         ).then(response => {
           if(response.ok) {
