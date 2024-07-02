@@ -2,7 +2,7 @@
     <div id='app-bar'>
       <v-app-bar app color="primary" dark>
   
-        <v-toolbar-title>Todo App</v-toolbar-title>
+        <v-toolbar-title>Hardware Security Key Testing Website</v-toolbar-title>
   
         <v-spacer></v-spacer>
   
