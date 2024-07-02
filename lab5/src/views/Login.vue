@@ -1,5 +1,5 @@
 <template>
-      <h1 id='login'>Welcome to the Hardware Security Key Testing Website!</h1>
+      <h1 class='welcome'>Welcome to the Hardware Security Key Testing Website!</h1>
   <div class="form-container" id='login'>
     <h2>Log In / Register</h2>
 
@@ -8,10 +8,6 @@
         <label for="username">Username:</label>
         <input type="username" id="username" v-model="username" required />
       </div>
-      <div id='login'>
-        <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required />
-      </div id='login'>
       <button type="submit" class="form-btn" :disabled="isLoading">
         {{ isLoading ? "Logging in..." : "Log In" }}
       </button>
@@ -24,7 +20,7 @@
     <p class="error-message" v-if="errorMessage">{{ errorMessage }}</p>
   </div>
 
-    <div id='login'>
+    <div class='google'>
       <v-btn :href="`${apiOrigin}/api/v1/auth/google`" color="primary">
         <v-icon left>mdi-google</v-icon>
          Log In with Google
@@ -47,7 +43,6 @@
     flex-direction: column;
     align-items: center;
     height: 50%;
-    justify-content: space-evenly;
     }
 
   .form-container {
@@ -58,7 +53,6 @@
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  padding: 5px;
   background-color: #1967C0; /* Bue background */
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
   box-sizing: border-box; 
@@ -67,6 +61,7 @@
 h2 {
   text-align: center;
   color: #ddd; /* Lighter text */
+  padding: 15px;
 }
 
 .form {
@@ -98,16 +93,17 @@ input:focus {
 }
 
 .form-btn {
-  display: flex;
   flex-direction: row;
   padding: 5px 10px 5px 10px;
   font-family: arial, sans-serif;
   font-weight: bold;
   text-decoration: none;
   border: 2px solid #E8E9EB;
-  border-radius: 32px;
+  border-radius: 35px;
   color: #E8E9EB;
   transition: 0.2s ease-in-out;
+  border-spacing: 5px;
+  margin-top: 10px;
 }
 
 .form-btn:hover {
@@ -119,5 +115,15 @@ input:focus {
   color: #a94442;
   background-color: #4a4a4a; /* Darker background */
   border-color: #ebccd1;
+}
+
+.welcome {
+  text-align: center;
+  padding: 50px;
+}
+
+.google {
+  text-align: center;
+  padding: 50px;
 }
   </style>
